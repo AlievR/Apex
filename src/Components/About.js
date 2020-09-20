@@ -4,7 +4,7 @@ import abou2 from '../Image/about/2.jpg'
 import abou3 from '../Image/about/3.jpg'
 
 
-export default class Section_map extends Component {
+export default class About extends Component {
     render() {
         return (
             <section className="section">
@@ -41,6 +41,8 @@ export default class Section_map extends Component {
                             <h3 className="item_text">Rampart is an expert modder, ready to battle anyone in her way.</h3>
                         </div>
                     </div>
+
+
 
                 </div>
 
