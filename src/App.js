@@ -5,7 +5,7 @@ import Header_line from "./Components/Header_line"
 import About from "./Components/About.js"
 import Reclam_About  from "./Components/Reklam_About"
 import Service from "./Components/Service"
-import Reclama_Service from "./Components/Reklama_Service.js"
+import Modes from "./Components/Modes.js"
 function App() {
   return (
     <div>
@@ -13,7 +13,7 @@ function App() {
         <About />
         <Reclam_About />
         <Service />
-        <Reclama_Service />
+        <Modes />
     </div>
   );
 }

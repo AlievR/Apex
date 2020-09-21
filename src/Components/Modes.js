@@ -6,7 +6,7 @@ import sos from '../Image/Modes/s.png'
 
 
 
-export default class Reclama_Service extends Component {
+export default class Modes extends Component {
     render() {
         return (
             <div className="modes">
