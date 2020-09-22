@@ -6,14 +6,17 @@ import About from "./Components/About.js"
 import Reclam_About  from "./Components/Reklam_About"
 import Service from "./Components/Service"
 import Modes from "./Components/Modes.js"
+import Blog from './Components/Blog';
+
 function App() {
   return (
     <div>
         <Header_line />
         <About />
-        <Reclam_About />
-        <Service />
         <Modes />
+        <Service />
+        <Reclam_About />
+        <Blog />
     </div>
   );
 }
