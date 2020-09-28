@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import service from '../Image/service.png'
 import icon from '../Image/icon.png'
-import map1 from '../Image/map/map1.png'
-import map2 from '../Image/map/map2.png'
-import map3 from '../Image/map/map3.jpg'
+
+import rus from '../Image/about/1.png'
+import den from '../Image/about/2.png'
+import arch from '../Image/about/3.png'
+import toha from '../Image/about/4.png'
 
 
 export default class Service extends Component {
@@ -24,9 +26,8 @@ export default class Service extends Component {
                     <div className="service_content">
                         <div className="service_item">
                             <div className="service_image">
-                                <img src={map1} />
-                            </div>
-                            <div className="service_text">
+                                <img src={rus} />
+                                <div className="service_text">
                                 <div className="social">
                                     <a class="social_item" href="" target="_blank">
                                         <i class="fab fa-facebook"></i>
@@ -42,12 +43,14 @@ export default class Service extends Component {
                                     </a>
                                 </div>
                             </div>
+                            </div>
+
                         </div>
+
                         <div className="service_item">
                             <div className="service_image">
-                                <img src={map2} />
-                            </div>
-                            <div className="service_text">
+                                <img src={den} />
+                                <div className="service_text">
                                 <div className="social">
                                     <a class="social_item" href="" target="_blank">
                                         <i class="fab fa-facebook"></i>
@@ -63,12 +66,13 @@ export default class Service extends Component {
                                     </a>
                                 </div>
                             </div>
+                            </div>
                         </div>
+
                         <div className="service_item">
                             <div className="service_image">
-                                <img src={map3} />
-                            </div>
-                            <div className="service_text">
+                                <img src={arch} />
+                                <div className="service_text">
                                 <div className="social">
                                     <a class="social_item" href="" target="_blank">
                                         <i class="fab fa-facebook"></i>
@@ -84,7 +88,31 @@ export default class Service extends Component {
                                     </a>
                                 </div>
                             </div>
+                            </div>
                         </div>
+
+                        <div className="service_item">
+                            <div className="service_image">
+                                <img src={toha} />
+                                <div className="service_text">
+                                <div className="social">
+                                    <a class="social_item" href="" target="_blank">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a class="social_item" href="" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="social_item" href="" target="_blank">
+                                        <i class="fab fa-vk"></i>
+                                    </a>
+                                    <a class="social_item" href="" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

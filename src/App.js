@@ -1,21 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header_line from "./Components/Header_line"
+import Header from "./Components/Header.js"
+import Intro from "./Components/Intro.js"
 import About from "./Components/About.js"
-import Reclam_About  from "./Components/Reklam_About"
-import Service from "./Components/Service"
-import Modes from "./Components/Modes.js"
-import Blog from './Components/Blog';
+import Reclam_About  from "./Components/Reklam_About.js"
+import Service from "./Components/Service.js"
+import Reclam_Service from "./Components/Reklam_Service.js"
+import Blog from './Components/Blog.js';
+
 
 function App() {
   return (
     <div>
-        <Header_line />
+        <Header />
+        <Intro />
         <About />
-        <Modes />
-        <Service />
         <Reclam_About />
+        <Service />
+        <Reclam_Service />
         <Blog />
     </div>
   );

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import abou1 from '../Image/about/1.png'
-import abou2 from '../Image/about/2.jpg'
-import abou3 from '../Image/about/3.jpg'
+
 
 
 export default class Blog extends Component {

@@ -3,7 +3,8 @@
 
 .intro {
     width: 100%;
-    height: 100vh;
+    
+    min-height: 820px;
     background: url("./Image/bach2.jpg") no-repeat;
 
 }
@@ -11,18 +12,34 @@
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    
-    
+    margin: 0 auto;   
+}
+
+.header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header.fixed {
+    padding: 15px 0;
+    position: fixed;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2 ); /* тень для шапки */
+    /*background: #e5e1d8;*/
 }
 
 .intro_header{
     display: flex; 
     justify-content: space-between;
-    padding-top: 50px;
     align-items: center;
-
 }
+
+
 
 .header_logo {
     font-size: 30px;
@@ -67,6 +84,64 @@
     display: block;
 }
 
+
+.nav-tools {
+    position: absolute;
+    width: 30px;
+    top:25px;
+    right: 40px;
+    z-index: 1;
+    padding: 15px 0;
+    display: none;
+     
+}
+
+.nav-tools.active .nav-tools_item  {
+    background: none;
+}
+
+.nav-tools.active 
+.nav-tools_item::before  {
+    transform-origin: left top;
+    transform: rotate(45deg)
+    translateX(-2px);;
+}
+
+.nav-tools.active 
+.nav-tools_item::after  {
+    transform-origin: left bottom;
+    transform: rotate(-45deg)
+    translateX(-3px);
+}
+
+.nav-tools_item {
+    
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+.nav-tools_item::before,
+.nav-tools_item::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: #ffffff;
+    transition: transform .2s linear;
+}
+
+.nav-tools_item::before {
+    top: 7px;
+}
+
+.nav-tools_item::after {
+    bottom: 7px;
+}
+
+
+
 .intro_inner {
     width: 100%;
     max-width: 880px;
@@ -74,7 +149,7 @@
     flex-direction: column;
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    padding-top: 200px;
 }
 
 .inner_title {
@@ -172,9 +247,10 @@
 }
 
 .about_item {
-    width: 33.3333%;
+    width: 25%;
     padding: 0 15px;
 }
+
 
 .about_item:hover .about_image {
     transform: translate3d(-10px,-10px,0); /* смешение картинки при наводе */
@@ -193,6 +269,7 @@
 .about_image img {
     display: block;
     max-width: 100%;
+    max-height: 100%;
     transition: opacity .1s linear; /* длительность операции opacity */
 }
 
@@ -213,7 +290,7 @@
 
 .about_reklam {
     width: 100%;
-    height: 30vh;
+
     background: url("./Image/reclam.jpg") no-repeat;
 
 }
@@ -250,7 +327,7 @@
     text-transform: uppercase;
     color: #ffffff;
     display: block;
-    width: 230px;
+    width: 30%;
     height: 20px;
     border: 3px solid #ffffff;
     padding: 12px 24px;
@@ -276,7 +353,7 @@
 
 }
 .service_item {
-    position: relative;
+
     width: 33.3333%;
     padding: 0 15px;
 
@@ -352,6 +429,41 @@ transition: color .1s linear ;
 
 
 
+/* Верстка для блока Service_Reclam */
+
+.service_reklam {
+    background-color: #006848;
+    margin-bottom: 80px;
+}
+
+.sr_logo {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sr_content {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0px;
+    font-size: 19px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+
+}
+.suptitle_sr {
+    margin: 0;
+}
+
+.title_sr {
+    padding: 0 0 15px;
+}
+
+
+
 /* Верстка для Modes */
 
 .modes {
@@ -420,30 +532,29 @@ transition: color .1s linear ;
 .clietns {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     
 }
 
 .clietns_item {
-    
-    width: 50%;
-    position: relative;
+    padding-left: 20px;
+    width: 43%;
     margin-bottom: 50px;
+    display: flex;
     
-
 }
 
 
 .clietns_image {
-    position: absolute;
+    
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    top:0;
-    left: 40px;
-    z-index: 1;
     
 }
 
 .clients_content{
-    padding: 0 45px 0 170px;
+    padding: 0 45px 0 20px;
 
 }
 
@@ -528,25 +639,78 @@ clients_dev {
 @media (max-width:770px){
 
     /* intro */ 
+
+
+
     .inner_title{
         font-size: 60px;
     }
+    
+    .intro_header {
+        padding-top: 10px;
+
+    }
 
     .nav {
-        display: none;
+        /*display: none;*/
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
     }
 
-    .modes_item {
-        display: none;
+    .nav.active {
+        background: #70694d;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+    .nav_link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+
+    }
+
+
+    .nav-tools {
+        display: block;
+         
     }
     
-    .modes_suptitle {
-        font-size: 20px;
+
+    .about {
+        flex-wrap: wrap;    
     }
 
-    .modes_title {
-        font-size: 16px;
+    .about_item {
+        width: 43%;
+        max-width: 330px;
+        padding-bottom: 25px;
     }
+
+    .service_content {
+        flex-wrap: wrap;
+    }
+
+    .service_item {
+        width: 43%;
+        max-width: 330px;
+        padding-bottom: 25px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+    
+
+
+
 }
 
 
@@ -557,19 +721,69 @@ clients_dev {
         padding-left: 15px;
     }
 
+    
     .nav {
-        display: none;
+        /*display: none;*/
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
     }
 
-    .modes_item {
-        display: none;
+    .nav.active {
+        background: #70694d;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+
+    .about {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .modes_suptitle {
+    .about_item {
+        width: 100%;
+        max-width: 380px;
+        padding-bottom: 25px;
+    }
+
+    .service_content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service_item {
+        width: 100%;
+        max-width: 380px;
+        padding-bottom: 25px;
+    }
+
+    .clietns_item {
+        width: 100%;
+    }
+   
+    .about-reklam_suptitle {
         font-size: 16px;
     }
 
-    .modes_title {
+    .about-reklam_title {
+    font-size: 12px;
+    }
+
+    .about-reklam_text {
+        font-size: 8px;
+    }
+
+    .about-reklam_btn {
         font-size: 12px;
     }
+
+
+   
 }
